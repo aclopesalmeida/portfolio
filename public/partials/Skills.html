@@ -1,0 +1,48 @@
+﻿<script type="text/javascript">
+    if (typeof (app) === 'undefined') {
+        document.location.href = '/';
+    }
+</script>
+
+<h2 class="title">{{ 'Competencias' | translate }}</h2>
+
+<div class="col-xs-12 col-sm-10 col-sm-push-1 no-padding">
+    <div class="skill-category-container col-xs-12 col-sm-4 no-padding">
+        <div class="skill-category no-padding">
+            <h4 class="skill-category-title both-centered">Back-End</h4>
+        </div>
+        <ul class="col-xs-12 no-padding">
+                <li ng-repeat="skill in skills" ng-if="skill.category == 'Back-end'">{{skill.name}} {{ skill.level }}</li>
+        </ul>
+    </div>
+    <div class="skill-category-container col-xs-12 col-sm-4 no-padding">
+        <div class="skill-category">
+            <h4 class="skill-category-title both-centered">Front-End</h4>
+        </div>
+        <ul class="col-xs-12 no-padding">
+            <li ng-repeat="skill in skills" ng-if="skill.category == 'Front-end'"> {{skill.name}} {{ skill.level }}</li>
+        </ul>
+    </div>
+    <div class="skill-category-container col-xs-12 col-sm-4 no-padding">
+        <div class="skill-category no-padding">
+            <h4 class="skill-category-title both-centered">{{ 'Diversos' | translate }}</h4>
+        </div>
+        <ul class="col-xs-12 no-padding">
+            <li ng-repeat="skill in skills" ng-if="skill.category == 'Generic'"> {{skill.name}}</li>
+        </ul>
+    </div>
+</div>
+
+<div id="other-skills" class="col-xs-12 no-padding">
+    <h3 id="other-skills-title">{{ 'Outros' | translate }}</h3>
+    <ul class="no-padding">
+        <li ng-repeat="skill in skills" ng-if="skill.category == 'Others'">{{skill.name}} {{ skill.level }}</li>
+    </ul>
+</div>
+
+
+
+
+
+
+

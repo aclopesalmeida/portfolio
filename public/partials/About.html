@@ -1,0 +1,54 @@
+﻿<script type="text/javascript">
+    if (typeof app === 'undefined') {
+        document.location.href = "/";
+    }
+</script>
+
+<p class="col-xs-12 no-padding title">{{ 'Sobre' | translate }}</p>
+
+<div class="no-padding" id="about-container">
+    <div id="picture-container" class="col-xs-12 no-padding">
+            <img src="/img/about/carolina.png" alt="Carolina Almeida" class="img-responsive" />
+            
+    </div>
+
+    <div id="code-container" class="col-xs-12 no-padding">
+        <p id="code" class="no-padding">
+            $webDeveloper = new WebDeveloper();<br />
+            $webDeveloper->{{'nome' | translate }} = "{{ applicant.name }}"; <br /><br />
+
+            $webDeveloper->{{ 'experienciaProfissional' | translate }} = array(<br>
+            <span ng-repeat="job in professionalInfo">
+                &nbsp;&nbsp;&nbsp;&nbsp;[ <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ 'empresa' | translate }} => "{{ job.company }}", <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ 'título' | translate }} => "{{ job.title }}", <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ 'duração' | translate }} => "{{ job.duration }}", <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ 'tarefas' | translate }} 
+                => [<span id="tasks"><span ng-repeat="task in job.tasks">{{task}}</span>]</span>
+                &nbsp;&nbsp;&nbsp;&nbsp;]{{$last ? "" : ","}}<br>
+            </span> 
+            );<br /><br>
+            $webDeveloper->{{ 'licenciatura' | translate }} = "{{ translatedApplicant.bachelor }}";<br />
+            $webDeveloper->{{ 'faculdadeLicenciatura' }} = "{{ applicant.bachelorUniversity }}"; <br />
+            $webDeveloper->{{ 'mestrado' | translate }} = "{{ translatedApplicant.master}}";<br />
+            $webDeveloper->{{ 'faculdadeMestrado' }} = "{{ applicant.masterUniversity }}"; <br />
+        </p>
+    </div>
+</div>
+
+<h3 id="hobbies-title">Hobbies</h3>
+<div id="hobbies-loader"><img src="/img/about/35.gif" /></div>
+<div class="no-padding jcarousel" id="hobbies-container" ng-controller="Interests">
+    <div>
+        <div ng-repeat="interest in interests" class="repeatimh">
+        <img src="/img/about/{{ interest.imageName }}" alt="{{ interest.imageName }}" />
+        <p ng-repeat="trans in interest.interesttranslations">{{ trans.name }}</p>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+

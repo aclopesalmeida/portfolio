@@ -1,0 +1,14 @@
+{
+  "Loader": "A gerar portefólio...",
+  "Portefolio": "Portefólio",
+  "Competencias": "Competências",
+  "Sobre": "Sobre",
+  "Contactos": "Contactos",
+  "Tecnologias": "Tecnologias utilizadas:",
+  "Mensagem botao": "Ver mais",
+  "Mensagem": "Escreva a sua mensagem aqui.",
+  "Obrigatorio": "Este campo é obrigatório.",
+  "Valido": "Por favor introduza um endereço de email válido.",
+  "Comprimento": "Por favor introduza um nome válido.",
+  "msgEmail" : "Mensagem enviada!"
+}

@@ -1,0 +1,30 @@
+﻿<script type="text/javascript">
+    if (typeof (app) === 'undefined') {
+        document.location.href = '/';
+    }
+</script>
+<h2 class="title">{{ 'Contactos' | translate }}</h2>
+
+<form name="contactForm" id="contact-form" ng-controller="Contacts" ng-submit="contactForm.$valid ? sendMessage() : return;" novalidate class="col-xs-12 no-padding">
+
+    <input type="text" name="name" ng-model="model.name" ng-minlength="2" placeholder="{{ 'Nome' | translate}}" />
+
+    <div class="help-block" ng-messages="contactForm.name.$error" ng-if="contactForm.name.$touched || contactForm.$submitted">
+        <div ng-messages-include="/Helpers/error-messages.html"></div>
+    </div>
+
+    <input type="email" name="email" ng-model="model.email" required placeholder="Email"/>
+
+    <div class="help-block" ng-messages="contactForm.email.$error" ng-if="contactForm.email.$touched || contactForm.$submitted">
+        <div ng-messages-include="/Helpers/error-messages.html"></div>
+    </div>
+
+    <textarea name="message" ng-model="model.message" required placeholder="{{ 'Mensagem' | translate }}"></textarea>
+    <div class="help-block" ng-messages="contactForm.message.$error" ng-if="contactForm.message.$touched || contactForm.$submitted">
+        <div ng-messages-include="/Helpers/error-messages.html"></div>
+    </div>
+    <br />
+    <p ng-show="emailSuccess">{{ 'msgEmail' | translate }}</p>
+    <input type="submit" value="{{ 'Enviar' | translate }}" />
+</form>
+
